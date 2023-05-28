@@ -6,7 +6,6 @@
 
     <artifactId>nim</artifactId>
     <modules>
-        <module>rules</module>
         <module>ai.random</module>
         <module>ai.max</module>
         <module>main.console</module>
@@ -20,7 +19,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kotlin.code.style>official</kotlin.code.style>
-        <kotlin.compiler.jvmTarget>11</kotlin.compiler.jvmTarget>
+        <kotlin.compiler.jvmTarget>17</kotlin.compiler.jvmTarget>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
     </properties>
 
