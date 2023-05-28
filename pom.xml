@@ -8,7 +8,6 @@
     <modules>
         <module>ai.random</module>
         <module>ai.max</module>
-        <module>main.console</module>
     </modules>
     <groupId>net.pijcke</groupId>
     <version>1.0-SNAPSHOT</version>
