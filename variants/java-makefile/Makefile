@@ -12,9 +12,14 @@ modules/net.pijcke.nim.rules.jar:
 	mkdir -p modules
 	jar --create --file modules/net.pijcke.nim.rules.jar -C net.pijcke.nim.rules/target .
 
+run: all run-console
+
+run-console:
+	java --module-path modules --add-modules ALL-MODULE-PATH -jar modules/net.pijcke.nim.mainconsole.jar
+
 clean:
 	rm -rf modules
 	rm -rf net.pijcke.nim.rules/target
 	rm -rf net.pijcke.nim.mainconsole/target
 
-.PHONY: clean
+.PHONY: clean run run-console
