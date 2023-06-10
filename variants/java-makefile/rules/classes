@@ -1,2 +1,4 @@
-src/net/pijcke/nim/rules/Player.java
 src/net/pijcke/nim/rules/Nim.java
+src/net/pijcke/nim/rules/Player.java
+src/net/pijcke/nim/rules/PlayerFactory.java
+src/module-info.java
