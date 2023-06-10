@@ -1,5 +1,5 @@
 all:
-	javac @options @classes
+	javac @javaoptions @sources
 
 clean:
 	rm -rf target
