@@ -1,16 +1,24 @@
-all: modules/net.pijcke.nim.rules.jar modules/net.pijcke.nim.mainconsole.jar
+MODULES := rules aione
+MODULES_MAIN := mainconsole # TODO Can we build this list automatically when we spot the prefix "main"?
 
-# TODO define modules and make generic rules
+QUALIFIED_MODULES := $(addprefix net.pijcke.nim.,$(MODULES))
+QUALIFIED_MODULES_MAIN := $(addprefix net.pijcke.nim.,$(MODULES_MAIN))
 
-modules/net.pijcke.nim.mainconsole.jar:
-	javac -d net.pijcke.nim.mainconsole/target @net.pijcke.nim.mainconsole/classes --module-path modules
+JARS := $(addprefix modules/,$(addsuffix .jar,$(QUALIFIED_MODULES)))
+JARS_MAIN := $(addprefix modules/,$(addsuffix .jar,$(QUALIFIED_MODULES_MAIN)))
+
+all: $(JARS) $(JARS_MAIN)
+	echo $(JARS)
+
+$(JARS_MAIN): modules/%.jar:
+	javac -d $*/target @$*/classes --module-path modules
 	mkdir -p modules
-	jar --create --main-class net.pijcke.nim.mainconsole.Main --file modules/net.pijcke.nim.mainconsole.jar -C net.pijcke.nim.mainconsole/target .
+	jar --create --main-class $*.Main --file $@ -C $*/target .
 
-modules/net.pijcke.nim.rules.jar:
-	javac -d net.pijcke.nim.rules/target @net.pijcke.nim.rules/classes --module-path modules
+$(JARS): modules/%.jar:
+	javac -d $*/target @$*/classes --module-path modules
 	mkdir -p modules
-	jar --create --file modules/net.pijcke.nim.rules.jar -C net.pijcke.nim.rules/target .
+	jar --create --file $@ -C $*/target .
 
 run: all run-console
 

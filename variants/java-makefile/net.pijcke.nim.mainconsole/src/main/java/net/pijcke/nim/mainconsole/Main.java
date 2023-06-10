@@ -26,6 +26,21 @@ public class Main {
       System.exit(1);
     }
 
+    Player player1 = buildPlayer(1);
+    Player player2 = buildPlayer(2);
+
+    new Nim(player1, player2, 42).start();
+
+  }
+
+  private static Player buildPlayer(final int number) throws IOException {
+    System.out.printf("Enter player %d type : ", number);
+    System.out.println(i);
+    int index = System.in.read();
+    if (index < 0 || index >= i) {
+      throw new InputMismatchException("Not in range");
+    }
+    return factories.get(index).build();
   }
 
 }
