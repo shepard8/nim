@@ -14,5 +14,10 @@ public class OneAI implements Player {
     return 1;
   }
 
+  @Override
+  public void message(String message) {
+    System.out.println(this.toString() + " : " + message);
+  }
+
 }
 
