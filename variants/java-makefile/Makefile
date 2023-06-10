@@ -27,7 +27,6 @@ run-console:
 
 clean:
 	rm -rf modules
-	rm -rf net.pijcke.nim.rules/target
-	rm -rf net.pijcke.nim.mainconsole/target
+	rm -rf */target
 
 .PHONY: clean run run-console

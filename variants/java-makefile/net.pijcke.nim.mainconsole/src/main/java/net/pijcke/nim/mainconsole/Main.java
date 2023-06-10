@@ -16,6 +16,8 @@ public class Main {
 
   private static int i = 0;
 
+  private static Scanner scanner = new Scanner(System.in);
+
   public static void main(String[] args) throws IOException {
 
     factories.forEach(playerFactory ->
@@ -35,8 +37,7 @@ public class Main {
 
   private static Player buildPlayer(final int number) throws IOException {
     System.out.printf("Enter player %d type : ", number);
-    System.out.println(i);
-    int index = System.in.read();
+    int index = scanner.nextInt();
     if (index < 0 || index >= i) {
       throw new InputMismatchException("Not in range");
     }

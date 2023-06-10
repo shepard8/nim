@@ -31,7 +31,12 @@ public class Nim {
       }
 
       sticks -= sticksToRemove;
-      broadcast(String.format("%s removed %d sticks. There are %d remaining sticks.", currentPlayer, sticksToRemove, sticks));
+      if (sticks > 1) {
+        broadcast(String.format("%s removed %d sticks. There are %d remaining sticks.", currentPlayer, sticksToRemove, sticks));
+      }
+      else {
+        broadcast(String.format("%s removed %d sticks. There is one stick remaining.", currentPlayer, sticksToRemove, sticks));
+      }
 
       swapPlayers();
     }
