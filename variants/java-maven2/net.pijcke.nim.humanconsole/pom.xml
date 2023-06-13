@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.pijcke.nim</groupId>
-    <artifactId>rules</artifactId>
+    <artifactId>humanconsole</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <build>
@@ -33,5 +33,15 @@
             </plugin>
         </plugins>
     </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.pijcke.nim</groupId>
+            <artifactId>rules</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/../modules/rules-1.0-SNAPSHOT.jar</systemPath>
+        </dependency>
+    </dependencies>
 
 </project>

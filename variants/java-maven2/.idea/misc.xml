@@ -9,10 +9,18 @@
       <list>
         <option value="$PROJECT_DIR$/net.pijcke.nim.rules/pom.xml" />
         <option value="$PROJECT_DIR$/mainconsole/pom.xml" />
+        <option value="$PROJECT_DIR$/net.pijcke.nim.mainconsole/pom.xml" />
+        <option value="$PROJECT_DIR$/net.pijcke.nim.aione/pom.xml" />
+        <option value="$PROJECT_DIR$/net.pijcke.nim.humanconsole/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/mainconsole/pom.xml" />
+      </set>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_20" default="true" project-jdk-name="temurin-20" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

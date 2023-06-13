@@ -8,11 +8,20 @@
         <outputRelativeToContentRoot value="true" />
         <module name="rules" />
         <module name="mainconsole" />
+        <module name="aione" />
+        <module name="humanconsole" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="net.pijcke.nim.rules" target="20" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="aione" options="--module-path ../modules/" />
+      <module name="humanconsole" options="--module-path ../modules/" />
+      <module name="mainconsole" options="--module-path ../modules/" />
+      <module name="net.pijcke.nim.rules" options="--module-path ../modules/" />
       <module name="rules" options="--module-path ../modules/" />
     </option>
   </component>
