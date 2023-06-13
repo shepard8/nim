@@ -1,12 +1,3 @@
-MODULES := rules aione
-MODULES_MAIN := mainconsole # TODO Can we build this list automatically when we spot the prefix "main"?
-
-QUALIFIED_MODULES := $(addprefix net.pijcke.nim.,$(MODULES))
-QUALIFIED_MODULES_MAIN := $(addprefix net.pijcke.nim.,$(MODULES_MAIN))
-
-JARS := $(addprefix modules/,$(addsuffix .jar,$(QUALIFIED_MODULES)))
-JARS_MAIN := $(addprefix modules/,$(addsuffix .jar,$(QUALIFIED_MODULES_MAIN)))
-
 all: modules/net.pijcke.nim.rules.jar \
  	modules/net.pijcke.nim.mainconsole.jar \
 	modules/net.pijcke.nim.aione.jar
