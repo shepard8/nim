@@ -22,6 +22,7 @@
       <module name="humanconsole" options="--module-path ../modules/" />
       <module name="mainconsole" options="--module-path ../modules/" />
       <module name="net.pijcke.nim.rules" options="--module-path ../modules/" />
+      <module name="root" options="--module-path ../modules/" />
       <module name="rules" options="--module-path ../modules/" />
     </option>
   </component>
