@@ -6,24 +6,29 @@ data class NimBuild(val name : String, val projectsToLoad : List<String>) {
 }
 
 listOf(
-    NimBuild("runConsoleNoAi", listOf(":mainconsole", ":rules")),
-//    NimBuild("runConsoleAllAis", listOf(":mainConsole", ":rules", ":aione", ":aibest", ":airandom", ":aimax")),
-//    NimBuild("runConsoleEasyAis", listOf(":mainConsole", ":rules", ":aione", ":aimax")),
+    NimBuild("runConsoleNoPlayer", listOf(":mainconsole", ":rules")),
+//    NimBuild("runConsoleNoAi", listOf(":mainconsole", ":rules", "humanconsole")),
+    NimBuild("runConsoleEasyAis", listOf(":mainconsole", ":rules", ":aione", ":aimax")),
+//    NimBuild("runConsoleAllAis", listOf(":mainconsole", ":rules", ":humanconsole", ":aione", ":aibest", ":airandom", ":aimax")),
 ).forEach { nimBuild ->
     tasks.register(nimBuild.name) {
-        nimBuild.projectsToLoad.forEach { dependsOn("$it:jar") }
+        nimBuild.projectsToLoad.forEach { dependsOn("$it:build") }
 
-        exec { commandLine("rm", "-rf", nimBuild.name) }
-        exec { commandLine("mkdir", nimBuild.name) }
-        copy {
-            from(nimBuild.projectsToLoad.map { project(it).buildDir.resolve("libs") })
-            into(nimBuild.name)
+        doLast {
+            exec { commandLine("rm", "-rf", nimBuild.name) }
+            exec { commandLine("mkdir", nimBuild.name) }
+            copy {
+                from(nimBuild.projectsToLoad.map { project(it).buildDir.resolve("libs") })
+                into(nimBuild.name)
+            }
+            exec {
+                commandLine(
+                    "java",
+                    "--module-path", nimBuild.name,
+                    "--add-modules", "ALL-MODULE-PATH",
+                    "-jar", nimBuild.name + "/" + project(nimBuild.mainProject).buildDir.resolve("libs").list()?.first()
+                )
+            }
         }
-        exec { commandLine(
-            "java",
-            "--module-path", nimBuild.name,
-            "--add-modules", "ALL-MODULE-PATH",
-            "-jar", nimBuild.name + "/" + project(nimBuild.mainProject).buildDir.resolve("libs").list()?.first()
-        )}
     }
 }

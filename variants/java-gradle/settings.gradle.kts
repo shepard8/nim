@@ -2,3 +2,5 @@ rootProject.name = "nim"
 
 include("rules")
 include("mainconsole")
+include("aione")
+include("aimax")

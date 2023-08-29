@@ -22,7 +22,7 @@ public class Main {
         factories.forEach(playerFactory -> System.out.printf("%d : %s%n", i++, playerFactory.label()));
 
         if (i == 0) {
-            System.out.println("No player factor found. Can't start game.");
+            System.out.println("No player factory found. Can't start game.");
             System.exit(1);
         }
 
