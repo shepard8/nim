@@ -20,7 +20,7 @@ public class RandomAI implements Player {
 
     @Override
     public int play(int sticks) {
-        return random.nextInt(Math.min(sticks, Nim.MAX_STICKS_PER_TURN));
+        return random.nextInt(Math.min(sticks, Nim.MAX_STICKS_PER_TURN)) + 1;
     }
 
 }
