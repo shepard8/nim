@@ -22,6 +22,8 @@ listOf(
                 into(nimBuild.name)
             }
             exec {
+                standardInput = System.`in`
+
                 commandLine(
                     "java",
                     "--module-path", nimBuild.name,
