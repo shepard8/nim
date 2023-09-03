@@ -3,7 +3,7 @@ package net.pijcke.nim.rules
 class Nim(private var currentPlayer : Player, private var otherPlayer : Player, private var sticks : Int) {
 
     companion object {
-        val MAX_STICKS_PER_TURN = 3
+        const val MAX_STICKS_PER_TURN = 3
     }
 
     fun start() {
@@ -11,19 +11,21 @@ class Nim(private var currentPlayer : Player, private var otherPlayer : Player, 
             val sticksToRemove = currentPlayer.play(sticks)
 
             if (sticksToRemove < 1 || sticksToRemove > MAX_STICKS_PER_TURN || sticksToRemove > sticks) {
-                broadcast("Player $currentPlayer has been eliminated for not following the rules.")
+                broadcast("Player ${currentPlayer.name()} has been eliminated for not following the rules.")
                 break
             }
 
             if (sticksToRemove == sticks) {
-                broadcast("Player $currentPlayer has been eliminated for removing the last stick.")
+                broadcast("Player ${currentPlayer.name()} has been eliminated for removing the last stick.")
                 break
             }
 
             sticks -= sticksToRemove
-            broadcast("$currentPlayer removed $sticksToRemove sticks. There are $sticks sticks remaining.")
+            broadcast("${currentPlayer.name()} removed $sticksToRemove sticks. There are $sticks sticks remaining.")
             swapPlayers()
         }
+
+        println("${otherPlayer.name()} won the game!")
     }
 
     private fun broadcast(message: String) {

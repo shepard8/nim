@@ -7,3 +7,8 @@ plugins {
 include("rules")
 include("mainconsole")
 include("humanconsole")
+include("airandom")
+include("aione")
+include("aimax")
+include("aibest")
+

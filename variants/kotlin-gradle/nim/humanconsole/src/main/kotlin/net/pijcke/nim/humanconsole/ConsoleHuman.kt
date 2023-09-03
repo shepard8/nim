@@ -10,7 +10,7 @@ class ConsoleHuman(private val name: String) : Player {
     override fun name() = name
 
     override fun play(sticks: Int): Int {
-        println("$name, howe many sticks do you want to remove ($sticks remaining)?")
+        println("$name, how many sticks do you want to remove ($sticks remaining)?")
         return scanner.nextInt()
     }
 
