@@ -2,7 +2,7 @@ package net.pijcke.nim.rules
 
 interface Player {
 
-    fun name()
+    fun name(): String
 
     fun play(sticks : Int): Int
 

@@ -7,8 +7,8 @@ data class NimBuild(val name : String, val projectsToLoad : List<String>) {
 
 listOf(
     NimBuild("runConsoleNoPlayer", listOf(":mainconsole", ":rules")),
-//    NimBuild("runConsoleNoAi", listOf(":mainconsole", ":rules", "humanconsole")),
-//    NimBuild("runConsoleEasyAis", listOf(":mainconsole", ":rules", "humanconsole", ":aione", ":aimax")),
+    NimBuild("runConsoleNoAi", listOf(":mainconsole", ":rules", ":humanconsole")),
+//    NimBuild("runConsoleEasyAis", listOf(":mainconsole", ":rules", ":humanconsole", ":aione", ":aimax")),
 //    NimBuild("runConsoleAllAis", listOf(":mainconsole", ":rules", ":humanconsole", ":aione", ":aibest", ":airandom", ":aimax")),
 ).forEach { nimBuild ->
     tasks.register(nimBuild.name) {

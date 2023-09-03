@@ -6,3 +6,4 @@ plugins {
 
 include("rules")
 include("mainconsole")
+include("humanconsole")

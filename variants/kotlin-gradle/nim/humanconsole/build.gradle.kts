@@ -1,6 +1,5 @@
 plugins {
     kotlin("jvm") version "1.9.10"
-    application
 }
 
 group = "net.pijcke.nim"
@@ -15,23 +14,14 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
-application {
-    mainClass.set("net.pijcke.nim.mainconsole.MainKt")
-}
-tasks.withType<Jar> {
-    manifest {
-        attributes["Main-Class"] = "net.pijcke.nim.mainconsole.MainKt"
-    }
+tasks.test {
+    useJUnitPlatform()
 }
 
 tasks.named("compileJava", JavaCompile::class.java) {
     options.compilerArgumentProviders.add(CommandLineArgumentProvider {
-        listOf("--patch-module", "net.pijcke.nim.mainconsole=${sourceSets["main"].output.asPath}")
+        listOf("--patch-module", "net.pijcke.nim.humanconsole=${sourceSets["main"].output.asPath}")
     })
-}
-
-tasks.test {
-    useJUnitPlatform()
 }
 
 kotlin {
