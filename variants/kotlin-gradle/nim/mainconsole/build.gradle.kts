@@ -18,9 +18,9 @@ dependencies {
 application {
     mainClass.set("net.pijcke.nim.mainconsole.MainKt")
 }
-tasks.withType<Jar> {
+tasks.jar {
     manifest {
-        attributes["Main-Class"] = "net.pijcke.nim.mainconsole.MainKt"
+        attributes("Main-Class" to "net.pijcke.nim.mainconsole.MainKt")
     }
 }
 

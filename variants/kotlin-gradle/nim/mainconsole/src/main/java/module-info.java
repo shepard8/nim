@@ -1,5 +1,5 @@
-module net.pijcke.nim.mainconsole {
+module nim.mainconsole {
     requires kotlin.stdlib;
-    requires net.pijcke.nim.rules;
+    requires nim.rules;
     uses net.pijcke.nim.rules.PlayerFactory;
 }

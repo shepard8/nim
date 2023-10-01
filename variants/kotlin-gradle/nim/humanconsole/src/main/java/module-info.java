@@ -1,5 +1,6 @@
-module net.pijcke.nim.humanconsole {
+module nim.humanconsole {
     requires kotlin.stdlib;
-    requires net.pijcke.nim.rules;
-    provides net.pijcke.nim.rules.PlayerFactory with net.pijcke.nim.humanconsole.ConsoleHumanFactory;
+    requires nim.rules;
+    provides net.pijcke.nim.rules.PlayerFactory
+            with net.pijcke.nim.humanconsole.ConsoleHumanFactory;
 }

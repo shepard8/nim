@@ -1,6 +1,7 @@
-module net.pijcke.nim.airandom {
+module nim.airandom {
     requires kotlin.stdlib;
-    requires net.pijcke.nim.rules;
+    requires nim.rules;
     exports net.pijcke.nim.airandom;
-    provides net.pijcke.nim.rules.PlayerFactory with net.pijcke.nim.airandom.RandomAiFactory;
+    provides net.pijcke.nim.rules.PlayerFactory
+            with net.pijcke.nim.airandom.RandomAiFactory;
 }
