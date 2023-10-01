@@ -17,7 +17,7 @@ fun main() {
         exitProcess(1)
     }
 
-    factories.forEachIndexed { i, pf -> println("$i : $pf") }
+    factories.forEachIndexed { i, pf -> println("$i : ${pf.label()}") }
 
     val player1 = buildPlayer(1)
     val player2 = buildPlayer(2)

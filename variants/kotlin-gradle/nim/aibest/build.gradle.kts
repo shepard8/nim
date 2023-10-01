@@ -12,16 +12,11 @@ repositories {
 dependencies {
     implementation(project(":rules"))
     implementation(project(":airandom"))
-    testImplementation(kotlin("test"))
-}
-
-tasks.test {
-    useJUnitPlatform()
 }
 
 tasks.named("compileJava", JavaCompile::class.java) {
     options.compilerArgumentProviders.add(CommandLineArgumentProvider {
-        listOf("--patch-module", "net.pijcke.nim.aibest=${sourceSets["main"].output.asPath}")
+        listOf("--patch-module", "nim.aibest=${sourceSets["main"].output.asPath}")
     })
 }
 
